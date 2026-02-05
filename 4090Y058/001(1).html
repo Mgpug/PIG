@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豬小妹 | 鳳梨酥專賣店</title>
+    <style>
+        :root {
+            --primary: #FF8C00;
+            --secondary: #FFB366;
+            --bg-light: #FFF9F0;
+            --text: #4A4A4A;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            color: var(--text); line-height: 1.6; scroll-behavior: smooth;
+        }
+
+        /* 1. 導航欄 */
+        nav {
+            padding: 20px 60px; display: flex; justify-content: space-between; align-items: center;
+            background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: black; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: bold; }
+
+        section { padding: 100px 10%; }
+        .title-center { text-align: center; margin-bottom: 60px; }
+        .title-center h2 { font-size: 36px; color: var(--primary); }
+
+        /* 2. 主視覺 Hero (第1頁) */
+        .hero { display: flex; height: 800px; padding: 0; position: relative; }
+        .hero-left { flex: 1; background: url('04.png') repeat; background-size: 180px; border-right: 15px solid white; display: flex; align-items: center; justify-content: center; }
+        .hero-card { background: white; padding: 40px; max-width: 300px; box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
+        .hero-right { flex: 2; position: relative; }
+        .shape-1 { position: absolute; width: 400px; height: 550px; background: var(--primary); border-radius: 50px; top: 50px; left: 10%; z-index: 1; }
+        .product-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; width: 500px; }
+
+        /* 3. 品牌理念 (第2頁) */
+        .concept { background: var(--bg-light); text-align: center; }
+
+        /* 4. 嚴選食材 (第3頁) */
+        .ingredients { display: flex; align-items: center; gap: 50px; }
+        .ing-img { flex: 1; } .ing-text { flex: 1; }
+
+        /* 5. 職人工法 (第4頁) - 統一方塊 */
+        .steps { display: flex; justify-content: center; gap: 20px; background: #FFE5E5; }
+        .step-box { width: 300px; height: 450px; background: white; padding: 30px; text-align: center; border-radius: 20px; }
+        .step-box img { width: 100%; margin-bottom: 20px; }
+
+        /* 6. 線上商城 (第5頁) */
+        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .item-card { background: var(--bg-light); padding: 20px; border-radius: 20px; text-align: center; }
+        .btn-buy { background: var(--primary); color: white; padding: 10px 25px; border-radius: 20px; border: none; cursor: pointer; margin-top: 15px; }
+
+        /* 7. 伴手禮盒展示 (第6頁) */
+        .gift-section { background: #fdf2e9; text-align: center; }
+
+        /* 8. 顧客好評 (第7頁) */
+        .reviews { display: flex; gap: 20px; justify-content: center; }
+        .rev-card { width: 250px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); font-style: italic; }
+
+        /* 9. 門市資訊 (第8頁) */
+        .stores { display: flex; gap: 50px; }
+        .store-info { flex: 1; }
+
+        /* 10. 常見問題 (第9頁) */
+        .faq { background: var(--bg-light); }
+        .faq-item { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+
+        /* 11. 聯絡我們與頁腳 (第10頁) */
+        footer { background: #333; color: white; padding: 60px 10%; display: flex; justify-content: space-between; }
+
+        /* 呼吸燈按鈕 */
+        .fixed-btn {
+            position: fixed; bottom: 40px; right: 40px; width: 90px; height: 90px;
+            background: #d2691e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-weight: bold; border: 4px solid white; z-index: 2000; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(210,105,30,0.7); } 70% { box-shadow: 0 0 0 20px rgba(210,105,30,0); } 100% { box-shadow: 0 0 0 0 rgba(210,105,30,0); } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">豬小妹</a>
+        <div class="nav-links">
+            <a href="#concept">品牌故事</a>
+            <a href="#shop">線上商城</a>
+            <a href="#stores">門市位置</a>
+            <a href="#footer">聯繫我們</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-card">
+                <h1>金鑽傳奇</h1>
+                <p>三代傳承的黃金比例，每一口都能嚐到土地的陽光香甜。</p>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="shape-1"></div>
+            <img src="05.png" class="product-img" alt="主產品">
+            
+        </div>
+    </section>
+
+    <section id="concept" class="concept">
+        <div class="title-center">
+            <h2>匠心傳承</h2>
+            <p>我們不只是製作點心，更是傳遞一份土地的情感。</p>
+        </div>
+        <p style="max-width: 800px; margin: 0 auto;">豬小妹 誕生於對純粹滋味的追求。堅持不添加人工香料，只用最天然的食材，復刻記憶中那份厚實且溫暖的甜味。</p>
+    </section>
+
+    <section class="ingredients">
+        <div class="ing-img"><img src="03.png" width="100%"></div>
+        <div class="ing-text">
+            <h2>嚴選台農 17 號金鑽鳳梨</h2>
+            <p>每一顆鳳梨都經過完整日照，果肉纖維細緻，甜而不膩，呈現出最天然的微酸層次。</p>
+        </div>
+    </section>
+
+    <section class="steps">
+        <div class="step-box"><img src="01.png"><h3>手工揉製</h3><p>師傅以指尖溫度感受麵團變化，確保皮酥而不散。</p></div>
+        <div class="step-box"><img src="02.png"><h3>低溫熬煮</h3><p>72 小時慢火熬製，鎖住果實的飽滿原汁。</p></div>
+        <div class="step-box"><img src="05.png"><h3>恆溫烘烤</h3><p>雙面溫控烘烤，達成金黃誘人的色澤。</p></div>
+    </section>
+
+    <section id="shop">
+        <div class="title-center"><h2>美味選購</h2></div>
+        <div class="shop-grid">
+            <div class="item-card"><img src="商品.png" width="150"><h3>經典禮盒 (12入)</h3><p>$480</p><button class="btn-buy">加入購物車</button></div>
+            <div class="item-card"><img src="商品.png" width="150"><h3>分享組合 (20入)</h3><p>$750</p><button class="btn-buy">加入購物車</button></div>
+            <div class="item-card"><img src="商品.png" width="150"><h3>午茶隨行 (6入)</h3><p>$250</p><button class="btn-buy">加入購物車</button></div>
+        </div>
+    </section>
+
+    <section class="gift-section">
+        <h2>送禮，送到心坎裡</h2>
+        <p>精緻質感的包裝設計，無論是佳節問候或商業往來，皆能彰顯您的獨到上品品味。</p>
+        <img src="05.png" width="400" style="margin-top: 30px;">
+    </section>
+
+    <section>
+        <div class="title-center"><h2>顧客迴響</h2></div>
+        <div class="reviews">
+            <div class="rev-card">"這是我吃過皮最酥的鳳梨酥，內餡還能吃到果肉纖維！"</div>
+            <div class="rev-card">"包裝非常精美，送給外國朋友大家都讚不絕口。"</div>
+            <div class="rev-card">"甜度剛剛好，配茶真的是絕配。"</div>
+        </div>
+    </section>
+
+    <section id="stores" class="stores">
+        <div class="store-info">
+            <h2>台北總店</h2>
+            <p>地址：台北市大安區陽光路 88 號</p>
+            <p>營業時間：10:00 - 20:00</p>
+            <p>電話：02-1234-5678</p>
+        </div>
+        <div class="store-info">
+            <h2>台中分店</h2>
+            <p>地址：台中市西屯區鳳梨大道 1 號</p>
+            <p>營業時間：11:00 - 19:00</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="title-center"><h2>常見問題</h2></div>
+        <div class="faq-item"><strong>Q: 產品保存期限多久？</strong><p>A: 常溫保存可放置 30 天，建議儘早食用風味最佳。</p></div>
+        <div class="faq-item"><strong>Q: 是否含有防腐劑？</strong><p>A: 我們全品項堅持不添加任何化學防腐劑與香料。</p></div>
+    </section>
+
+    <footer id="footer">
+        <div>
+            <h2 class="logo" style="color: white;">豬小妹</h2>
+            <p>Copyright © 2026 豬小妹. All rights reserved.</p>
+        </div>
+        <div>
+            <h3>追蹤我們</h3>
+            <p>Instagram / Facebook</p>
+            <p>官方 LINE: @豬小妹_tasty</p>
+        </div>
+    </footer>
+
+    <a href="#shop" class="fixed-btn">立即<br>訂購</a>
+
+</body>
+</html>
